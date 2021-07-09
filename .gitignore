@@ -1,0 +1,11 @@
+# node
+node_modules/
+
+# lib
+lib/
+
+# example
+src/example/node_modules
+src/example/build
+src/example/yarn.lock
+src/example/README.md
