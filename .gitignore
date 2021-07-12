@@ -9,3 +9,5 @@ src/example/node_modules
 src/example/build
 src/example/yarn.lock
 src/example/README.md
+
+yarn-error.log
