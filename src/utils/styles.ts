@@ -43,7 +43,7 @@ export const colors = {
   },
 };
 
-export const fontFamily = {
+export const fontFamilies = {
   poppins: {
     regular: "Poppins-Regular",
     medium: "Poppins-Medium",
@@ -55,16 +55,12 @@ export const fontFamily = {
   },
 };
 
-export const fontSize = {
-  XL: "1rem",
-  L: "0.6666666666666667rem",
-  M: "0.5rem",
-  S: "0.3888888888888889rem",
-};
-
-export const breakPoints = {
-  tablet: 768,
-  desktop: 1024,
+export const fontSizes = {
+  XL: "48px",
+  L: "36px",
+  M: "24px",
+  S: "18px",
+  XS: "14px",
 };
 
 export const buttonThemes = {
@@ -73,15 +69,15 @@ export const buttonThemes = {
     foreground: colors.white[100],
   },
   danger: {
-    background: colors.danger[40],
+    background: colors.danger[100],
     foreground: colors.danger[100],
   },
   success: {
-    background: colors.success[40],
+    background: colors.success[100],
     foreground: colors.success[100],
   },
   warning: {
-    background: colors.warning[40],
+    background: colors.warning[100],
     foreground: colors.warning[100],
   },
 };

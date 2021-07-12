@@ -2,9 +2,9 @@ import React from "react";
 import { IButtonProps } from "../../../utils/interfaces";
 import { PrimaryButton, SecondaryButton, GhostButton } from "./styles";
 
-function Button({ theme, buttonStyle, children, ...rest }: IButtonProps) {
+function Button({ theme, variant, children, ...rest }: IButtonProps) {
   const renderButton = () => {
-    switch (buttonStyle) {
+    switch (variant) {
       case "primary":
         return (
           <PrimaryButton theme={theme} {...rest}>
@@ -24,11 +24,7 @@ function Button({ theme, buttonStyle, children, ...rest }: IButtonProps) {
           </GhostButton>
         );
       default:
-        return (
-          <PrimaryButton theme={theme} {...rest}>
-            {children}
-          </PrimaryButton>
-        );
+        throw Error("Button variant is undefined");
     }
   };
   return renderButton();

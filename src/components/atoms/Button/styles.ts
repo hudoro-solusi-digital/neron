@@ -1,15 +1,16 @@
 import styled from "styled-components";
-import { buttonThemes, colors, fontFamily } from "../../../utils/styles";
+import { buttonThemes, colors, fontFamilies } from "../../../utils/styles";
+import { spacing } from "../../../utils/functions";
 
 export const PrimaryButton = styled.button`
   background-color: ${(props) => props.theme.background ?? colors.primary[100]};
-  color: ${(props) => props.theme.foreground ?? "white"};
+  color: white;
   border-radius: 999px;
-  font-family: ${fontFamily.poppins.regular};
+  font-family: ${fontFamilies.poppins.regular};
   outline: none;
   border: none;
   cursor: pointer;
-  padding: 10px 20px;
+  padding: ${spacing(2)}px ${spacing(4)}px;
 `;
 
 export const SecondaryButton = styled(PrimaryButton)`

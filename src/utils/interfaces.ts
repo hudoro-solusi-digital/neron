@@ -7,6 +7,6 @@ export interface IButtonTheme {
 }
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  buttonStyle?: ButtonType;
+  variant: ButtonType;
   theme?: IButtonTheme;
 }
