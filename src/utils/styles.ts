@@ -81,3 +81,7 @@ export const buttonThemes = {
     foreground: colors.warning[100],
   },
 };
+
+export const spacing = (space: number) => {
+  return 4 * space;
+};
