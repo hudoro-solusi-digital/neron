@@ -44,15 +44,8 @@ export const colors = {
 };
 
 export const fontFamilies = {
-  poppins: {
-    regular: "Poppins-Regular",
-    medium: "Poppins-Medium",
-    semiBold: "Poppins-SemiBold",
-    bold: "Poppins-Bold",
-  },
-  openSans: {
-    regular: "OpenSans-Regular",
-  },
+  poppins: ["Poppins", "sans-serif"].join(","),
+  openSans: ["Open Sans", "sans-serif"].join(","),
 };
 
 export const fontSizes = {

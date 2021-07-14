@@ -10,7 +10,7 @@ export const PrimaryButton = styled.button`
   background-color: ${(props) => props.theme.background ?? colors.primary[100]};
   color: white;
   border-radius: 999px;
-  font-family: ${fontFamilies.poppins.regular};
+  font-family: ${fontFamilies.poppins};
   outline: none;
   border: none;
   cursor: pointer;
