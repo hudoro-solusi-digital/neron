@@ -4,13 +4,16 @@ import { Wrapper, HiddenCheckbox, CustomCheckbox, Label } from "./styles";
 import Check from "./Check";
 
 /**
- *
- * Add label and name props to be a labeled checkbox
- *
+ * Add label props to be a labeled checkbox
  */
-function Checkbox({ checked, label, disabled, name, ...rest }: ICheckboxProps) {
+function Checkbox({
+  checked = false,
+  label,
+  disabled = false,
+  ...rest
+}: ICheckboxProps) {
   return (
-    <Wrapper checked={checked!} disabled={disabled!} htmlFor={name}>
+    <Wrapper checked={checked} disabled={disabled}>
       <HiddenCheckbox
         {...rest}
         disabled={disabled}
@@ -18,7 +21,7 @@ function Checkbox({ checked, label, disabled, name, ...rest }: ICheckboxProps) {
         checked={checked}
       />
       <CustomCheckbox>{checked && <Check />}</CustomCheckbox>
-      <Label>{label}</Label>
+      {label && <Label>{label}</Label>}
     </Wrapper>
   );
 }

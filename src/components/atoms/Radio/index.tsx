@@ -2,12 +2,12 @@ import { IRadioProps } from "interfaces";
 import React from "react";
 import { Wrapper, HiddenRadio, CustomRadio, Label } from "./styles";
 
-function Radio({ id, label, ...rest }: IRadioProps) {
+function Radio({ label, ...rest }: IRadioProps) {
   return (
-    <Wrapper htmlFor={id}>
-      <HiddenRadio {...rest} type="radio" id={id} />
+    <Wrapper>
+      <HiddenRadio {...rest} type="radio" />
       <CustomRadio />
-      <Label>{label}</Label>
+      {label && <Label>{label}</Label>}
     </Wrapper>
   );
 }
