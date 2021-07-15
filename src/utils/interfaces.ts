@@ -15,4 +15,8 @@ export interface ICheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
 }
 
+export interface IRadioProps extends InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
+}
+
 export interface ISVGProps extends SVGProps<SVGSVGElement> {}
