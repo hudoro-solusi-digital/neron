@@ -1,25 +1,42 @@
+import styled from "styled-components";
 import { Meta, Story } from "@storybook/react";
 import { Radio } from "../../components";
 import { IRadioProps } from "../../utils";
+
+const Container = styled.div`
+  display: flex;
+  gap: 10px;
+`;
 
 export default {
   title: "Components/Radio",
 } as Meta;
 
-export const Normal: Story<IRadioProps> = (args) => {
+const Normal: Story<IRadioProps> = (args) => {
   return (
-    <div style={{ display: "flex", gap: "10px" }}>
+    <Container>
       <Radio {...args} name="gender" />
       <Radio {...args} name="gender" />
-    </div>
+    </Container>
   );
 };
 
-export const Labeled: Story<IRadioProps> = (args) => {
+const Labeled: Story<IRadioProps> = (args) => {
   return (
-    <div style={{ display: "flex", gap: "10px" }}>
+    <Container>
       <Radio {...args} name="gender" label="Male" />
       <Radio {...args} name="gender" label="Female" />
-    </div>
+    </Container>
   );
+};
+
+export const NormalRadio = Normal.bind({});
+export const LabeledRadio = Labeled.bind({});
+
+NormalRadio.args = {
+  disabled: false,
+};
+
+LabeledRadio.args = {
+  disabled: false,
 };
