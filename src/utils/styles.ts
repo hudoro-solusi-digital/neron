@@ -54,6 +54,7 @@ export const fontSizes = {
   M: "24px",
   S: "18px",
   XS: "14px",
+  XXS: "12px",
 };
 
 export const buttonThemes = {
