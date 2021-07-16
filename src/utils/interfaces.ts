@@ -1,5 +1,10 @@
-import { ButtonHTMLAttributes, InputHTMLAttributes, SVGProps } from "react";
-import { ButtonType } from "./types";
+import {
+  ButtonHTMLAttributes,
+  HTMLAttributes,
+  InputHTMLAttributes,
+  SVGProps,
+} from "react";
+import { ButtonVariantType, TextVariantType } from "./types";
 
 export interface IButtonTheme {
   background?: string;
@@ -7,7 +12,7 @@ export interface IButtonTheme {
 }
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: ButtonType;
+  variant: ButtonVariantType;
   theme?: IButtonTheme;
 }
 
@@ -20,3 +25,7 @@ export interface IRadioProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export interface ISVGProps extends SVGProps<SVGSVGElement> {}
+
+export interface ITextProps extends HTMLAttributes<HTMLParagraphElement> {
+  variant: TextVariantType;
+}
