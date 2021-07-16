@@ -29,3 +29,5 @@ export interface ISVGProps extends SVGProps<SVGSVGElement> {}
 export interface ITextProps extends HTMLAttributes<HTMLParagraphElement> {
   variant: TextVariantType;
 }
+
+export interface ITogglerProps extends InputHTMLAttributes<HTMLInputElement> {}
