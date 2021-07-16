@@ -2,9 +2,14 @@ import {
   ButtonHTMLAttributes,
   HTMLAttributes,
   InputHTMLAttributes,
+  ReactNode,
   SVGProps,
 } from "react";
-import { ButtonVariantType, TextVariantType } from "./types";
+import {
+  ButtonVariantType,
+  LozengeColorAndVariantType,
+  TextVariantType,
+} from "./types";
 
 export interface IButtonTheme {
   background?: string;
@@ -28,4 +33,9 @@ export interface ISVGProps extends SVGProps<SVGSVGElement> {}
 
 export interface ITextProps extends HTMLAttributes<HTMLParagraphElement> {
   variant: TextVariantType;
+}
+
+export interface ILozengeProps {
+  variant: LozengeColorAndVariantType;
+  children: ReactNode;
 }
