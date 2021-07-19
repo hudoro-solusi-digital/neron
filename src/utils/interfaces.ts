@@ -2,7 +2,6 @@ import {
   ButtonHTMLAttributes,
   HTMLAttributes,
   InputHTMLAttributes,
-  ReactNode,
   SVGProps,
 } from "react";
 import {
@@ -37,5 +36,5 @@ export interface ITextProps extends HTMLAttributes<HTMLParagraphElement> {
 
 export interface ILozengeProps {
   variant: LozengeColorAndVariantType;
-  children: ReactNode;
+  label: string;
 }
