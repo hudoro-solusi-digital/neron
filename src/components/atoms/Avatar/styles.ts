@@ -5,7 +5,7 @@ interface IProps {
   size?: SizeType;
 }
 
-const sizeChart = {
+const avatarSizes = {
   xs: "24px",
   s: "32px",
   m: "40px",
@@ -14,8 +14,8 @@ const sizeChart = {
 };
 
 export const Image = styled.img<IProps>`
-  width: ${(props) => (props.size ? sizeChart[props.size] : sizeChart.m)};
-  height: ${(props) => (props.size ? sizeChart[props.size] : sizeChart.m)};
+  width: ${(props) => (props.size ? avatarSizes[props.size] : avatarSizes.m)};
+  height: ${(props) => (props.size ? avatarSizes[props.size] : avatarSizes.m)};
   border-radius: 50%;
   object-fit: cover;
 `;
