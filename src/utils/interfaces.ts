@@ -1,10 +1,11 @@
 import {
   ButtonHTMLAttributes,
   HTMLAttributes,
+  ImgHTMLAttributes,
   InputHTMLAttributes,
   SVGProps,
 } from "react";
-import { ButtonVariantType, TextVariantType } from "./types";
+import { ButtonVariantType, SizeType, TextVariantType } from "./types";
 
 export interface IButtonTheme {
   background?: string;
@@ -31,3 +32,6 @@ export interface ITextProps extends HTMLAttributes<HTMLParagraphElement> {
 }
 
 export interface ITogglerProps extends InputHTMLAttributes<HTMLInputElement> {}
+export interface IAvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
+  size?: SizeType;
+}
