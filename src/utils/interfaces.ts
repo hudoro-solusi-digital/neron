@@ -1,13 +1,15 @@
 import {
   ButtonHTMLAttributes,
   HTMLAttributes,
+  ImgHTMLAttributes,
   InputHTMLAttributes,
   SVGProps,
 } from "react";
 import {
   ButtonVariantType,
-  LozengeColorAndVariantType,
+  SizeType,
   TextVariantType,
+  LozengeColorAndVariantType,
 } from "./types";
 
 export interface IButtonTheme {
@@ -37,4 +39,8 @@ export interface ITextProps extends HTMLAttributes<HTMLParagraphElement> {
 export interface ILozengeProps {
   variant: LozengeColorAndVariantType;
   label: string;
+}
+export interface ITogglerProps extends InputHTMLAttributes<HTMLInputElement> {}
+export interface IAvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
+  size?: SizeType;
 }
