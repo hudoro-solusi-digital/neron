@@ -13,5 +13,5 @@ export const LozengeComponent = Template.bind({});
 
 LozengeComponent.args = {
   variant: "black-light",
-  children: "Lozenge",
+  label: "Lozenge",
 };
