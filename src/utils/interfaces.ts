@@ -5,7 +5,12 @@ import {
   InputHTMLAttributes,
   SVGProps,
 } from "react";
-import { ButtonVariantType, SizeType, TextVariantType } from "./types";
+import {
+  ButtonVariantType,
+  SizeType,
+  TextVariantType,
+  LozengeColorAndVariantType,
+} from "./types";
 
 export interface IButtonTheme {
   background?: string;
@@ -31,6 +36,10 @@ export interface ITextProps extends HTMLAttributes<HTMLParagraphElement> {
   variant: TextVariantType;
 }
 
+export interface ILozengeProps {
+  variant: LozengeColorAndVariantType;
+  label: string;
+}
 export interface ITogglerProps extends InputHTMLAttributes<HTMLInputElement> {}
 export interface IAvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   size?: SizeType;
