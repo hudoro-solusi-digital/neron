@@ -44,15 +44,8 @@ export const colors = {
 };
 
 export const fontFamilies = {
-  poppins: {
-    regular: "Poppins-Regular",
-    medium: "Poppins-Medium",
-    semiBold: "Poppins-SemiBold",
-    bold: "Poppins-Bold",
-  },
-  openSans: {
-    regular: "OpenSans-Regular",
-  },
+  poppins: ["Poppins", "sans-serif"].join(","),
+  openSans: ["Open Sans", "sans-serif"].join(","),
 };
 
 export const fontSizes = {
@@ -61,6 +54,7 @@ export const fontSizes = {
   M: "24px",
   S: "18px",
   XS: "14px",
+  XXS: "12px",
 };
 
 export const buttonThemes = {
