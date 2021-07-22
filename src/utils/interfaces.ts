@@ -10,6 +10,10 @@ import {
   SizeType,
   TextVariantType,
   LozengeColorAndVariantType,
+  GridSizeType,
+  JustifyContentType,
+  AlignItemsType,
+  FlexDirectionType,
 } from "./types";
 
 export interface IButtonTheme {
@@ -40,7 +44,19 @@ export interface ILozengeProps {
   variant: LozengeColorAndVariantType;
   label: string;
 }
+
 export interface ITogglerProps extends InputHTMLAttributes<HTMLInputElement> {}
+
 export interface IAvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   size?: SizeType;
+}
+
+export interface IGridProps {
+  container?: boolean;
+  size?: GridSizeType;
+  mdSize?: GridSizeType;
+  smSize?: GridSizeType;
+  flexDirection?: FlexDirectionType;
+  justifyContent?: JustifyContentType;
+  alignItems?: AlignItemsType;
 }
