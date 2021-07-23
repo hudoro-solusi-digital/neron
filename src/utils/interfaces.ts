@@ -1,3 +1,4 @@
+import Icons from "../components/atoms/Icon/Icons";
 import {
   ButtonHTMLAttributes,
   HTMLAttributes,
@@ -14,6 +15,7 @@ import {
   JustifyContentType,
   AlignItemsType,
   FlexDirectionType,
+  InputType,
 } from "./types";
 
 export interface IButtonTheme {
@@ -59,4 +61,14 @@ export interface IGridProps {
   flexDirection?: FlexDirectionType;
   justifyContent?: JustifyContentType;
   alignItems?: AlignItemsType;
+}
+
+export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
+  type?: InputType;
+  label?: string;
+  error?: boolean;
+  iconRight?: keyof typeof Icons;
+  iconLeft?: keyof typeof Icons;
+  iconLeftEvent?: () => void;
+  iconRightEvent?: () => void;
 }
