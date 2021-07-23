@@ -1,3 +1,4 @@
+import Icons from "../components/atoms/Icon/Icons";
 import {
   ButtonHTMLAttributes,
   HTMLAttributes,
@@ -18,11 +19,6 @@ import {
 } from "./types";
 
 export interface IButtonTheme {
-  background?: string;
-  foreground?: string;
-}
-
-export interface IInputTheme {
   background?: string;
   foreground?: string;
 }
@@ -68,7 +64,11 @@ export interface IGridProps {
 }
 
 export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  variant: InputType;
-  theme?: IInputTheme;
+  type?: InputType;
+  label?: string;
   error?: boolean;
+  iconRight?: keyof typeof Icons;
+  iconLeft?: keyof typeof Icons;
+  iconLeftEvent?: () => void;
+  iconRightEvent?: () => void;
 }

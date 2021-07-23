@@ -1,3 +1,5 @@
+import { SpacingType } from "../utils";
+
 export const colors = {
   black: {
     "100": "rgba(37, 40, 43, 1)",
@@ -76,6 +78,6 @@ export const buttonThemes = {
   },
 };
 
-export const spacing = (space: number) => {
+export const spacing = (space: SpacingType) => {
   return 4 * space;
 };

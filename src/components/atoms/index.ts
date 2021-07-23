@@ -7,5 +7,17 @@ import Lozenge from "./Lozenge";
 import Radio from "./Radio";
 import Text from "./Text";
 import Toggler from "./Toggler";
+import Icon from "./Icon";
 
-export { Button, Input, Checkbox, Radio, Text, Toggler, Avatar, Lozenge, Grid };
+export {
+  Button,
+  Input,
+  Checkbox,
+  Radio,
+  Text,
+  Toggler,
+  Avatar,
+  Lozenge,
+  Grid,
+  Icon,
+};

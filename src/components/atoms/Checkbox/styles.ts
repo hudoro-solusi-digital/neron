@@ -33,7 +33,7 @@ export const Wrapper = styled.label<IProps>`
   p {
     color: ${calibrateCheckboxLabelAndBorderColor};
   }
-  div {
+  & > div {
     background-color: ${calibrateCheckboxBackgroundColor};
     border: 1px solid ${calibrateCheckboxLabelAndBorderColor};
   }

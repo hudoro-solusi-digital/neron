@@ -19,4 +19,6 @@ export type JustifyContentType =
   | "flex-start"
   | "center";
 export type AlignItemsType = "center" | "flex-end" | "flex-start";
-export type InputType = "basic" | "labeled" | "password";
+export type InputVariantType = "basic" | "labeled" | "password";
+export type SpacingType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+export type InputType = "text" | "email" | "password" | "tel" | "number";
