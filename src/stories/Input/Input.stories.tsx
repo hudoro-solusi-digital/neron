@@ -5,12 +5,6 @@ import { IInputProps } from "../../utils";
 export default {
   title: "Components/Inputs",
   component: Input,
-  // argTypes: {
-  //   type: {
-  //     options: ["password", "text", "email"],
-  //     control: { type: "radio" },
-  //   },
-  // },
 } as Meta;
 
 const Template: Story<IInputProps> = (args) => <Input {...args} />;
