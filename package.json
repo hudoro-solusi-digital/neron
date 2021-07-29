@@ -1,6 +1,6 @@
 {
   "name": "@hudoro/neron",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Design System For Web Application",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
@@ -11,12 +11,20 @@
   ],
   "author": "Prawito Hudoro",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hudoro-solusi-digital/neron"
+  },
+  "bugs": {
+    "url": "https://github.com/hudoro-solusi-digital/neron/issues"
+  },
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepare" : "npm run build"
   },
   "peerDependencies": {
     "react": "^17.0.2",

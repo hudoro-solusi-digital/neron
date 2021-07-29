@@ -18,13 +18,6 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "baseUrl": "src",
-    "paths": {
-      "atoms": ["./components/atoms"],
-      "styles": ["./utils/styles"],
-      "types": ["./utils/types"],
-      "interfaces": ["./utils/interfaces"]
-    }
   },
   "include": ["src", "./**/*.ts", "./**/*.tsx"],
   "exclude": ["node_modules", "lib", "src/stories"]
