@@ -1,4 +1,4 @@
-import { IRadioProps } from "interfaces";
+import { IRadioProps } from "../../../utils";
 import React from "react";
 import { Wrapper, HiddenRadio, CustomRadio, Label } from "./styles";
 

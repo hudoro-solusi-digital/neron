@@ -1,5 +1,5 @@
 import React from "react";
-import { IInputProps } from "interfaces";
+import { IInputProps } from "../../../utils";
 import { Wrapper, Label, StyledInput, InputWrapper } from "./styles";
 import Icon from "../Icon";
 import { colors } from "../../../utils";
