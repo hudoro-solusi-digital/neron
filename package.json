@@ -1,5 +1,5 @@
 {
-  "name": "neron",
+  "name": "@hudoro/neron",
   "version": "0.1.0",
   "description": "Design System For Web Application",
   "main": "./lib/cjs/index.js",
