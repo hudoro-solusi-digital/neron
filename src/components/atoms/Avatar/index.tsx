@@ -10,7 +10,7 @@ function Avatar({ size, src, ...rest }: IAvatarProps) {
     e.currentTarget.src = defaultImage;
   };
   return (
-    <Image {...rest} onError={onError} src={src ?? defaultImage} size={size} />
+    <Image {...rest} onError={onError} src={src || defaultImage} size={size} />
   );
 }
 
