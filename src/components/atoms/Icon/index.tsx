@@ -1,9 +1,10 @@
 import React, { HTMLAttributes } from "react";
 import styled from "styled-components";
+import { IconType } from "../../../utils";
 import Icons from "./Icons";
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
-  iconName: keyof typeof Icons;
+  iconName: IconType;
   size?: 16 | 24 | 32;
   color?: string;
 }

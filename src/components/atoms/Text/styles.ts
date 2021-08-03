@@ -22,7 +22,7 @@ export const H4 = styled.h4`
 `;
 
 export const Paragraph = styled.p`
-  font-family: ${fontFamilies.poppins};
+  font-family: ${fontFamilies.openSans};
   font-size: ${fontSizes.XS};
 `;
 
