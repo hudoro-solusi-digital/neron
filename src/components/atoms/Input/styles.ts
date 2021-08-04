@@ -16,7 +16,7 @@ export const InputWrapper = styled.div<
   Pick<IInputProps, "iconLeftEvent" | "iconRightEvent">
 >`
   position: relative;
-  display: inline-block;
+  display: block;
   .icon-right {
     position: absolute;
     fill: ${colors.black[20]};
