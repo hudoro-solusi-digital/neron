@@ -72,3 +72,8 @@ export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   iconLeftEvent?: () => void;
   iconRightEvent?: () => void;
 }
+
+export interface ILabelValueProps {
+  label: string;
+  value: string;
+}

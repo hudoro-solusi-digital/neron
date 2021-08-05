@@ -14,6 +14,13 @@ import IcInfo from "./IcInfo";
 import IcHistory from "./IcHistory";
 import IcTrash from "./IcTrash";
 import IcSearch from "./IcSearch";
+import IcArrowDown from "./IcArrowDown";
+import IcArrowUp from "./IcArrowUp";
+import IcArrowRight from "./IcArrowRight";
+import IcArrowLeft from "./IcArrowLeft";
+import IcWallet from "./IcWallet";
+import IcDollar from "./IcDollar";
+import IcSend from "./IcSend";
 
 const Icons = {
   IcEye: <IcEye />,
@@ -31,6 +38,13 @@ const Icons = {
   IcHistory: <IcHistory />,
   IcTrash: <IcTrash />,
   IcSearch: <IcSearch />,
+  IcArrowDown: <IcArrowDown />,
+  IcArrowUp: <IcArrowUp />,
+  IcArrowRight: <IcArrowRight />,
+  IcArrowLeft: <IcArrowLeft />,
+  IcWallet: <IcWallet />,
+  IcDollar: <IcDollar />,
+  IcSend: <IcSend />,
 };
 
 export default Icons;

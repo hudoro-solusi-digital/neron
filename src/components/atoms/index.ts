@@ -8,6 +8,7 @@ import Radio from "./Radio";
 import Text from "./Text";
 import Toggler from "./Toggler";
 import Icon from "./Icon";
+import LabelValue from "./LabelValue";
 
 export {
   Button,
@@ -20,4 +21,5 @@ export {
   Lozenge,
   Grid,
   Icon,
+  LabelValue,
 };
