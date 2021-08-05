@@ -35,6 +35,7 @@ export const InputWrapper = styled.div<
 export const StyledInput = styled.input<
   Pick<IInputProps, "error" | "iconRight" | "iconLeft">
 >`
+  width: 100%;
   font-size: ${fontSizes.XXS};
   border: 1px solid
     ${(props) => (props.error ? colors.danger[80] : colors.black[20])};
