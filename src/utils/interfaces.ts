@@ -54,6 +54,7 @@ export interface IAvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
 }
 
 export interface IGridProps {
+  gap?: number;
   container?: boolean;
   size?: GridSizeType;
   mdSize?: GridSizeType;
@@ -71,4 +72,9 @@ export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   iconLeft?: IconType;
   iconLeftEvent?: () => void;
   iconRightEvent?: () => void;
+}
+
+export interface ILabelValueProps {
+  label: string;
+  value: string;
 }
