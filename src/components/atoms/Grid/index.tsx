@@ -23,7 +23,7 @@ const Grid = styled.div<IGridProps>`
       align-items: ${props.alignItems || "initial"};
       justify-content: ${props.justifyContent || "initial"};
       flex-direction: ${props.flexDirection || "initial"};
-      gap: ${props.gap || "initial"};
+      gap: ${props.gap + "px" || "initial"};
     `}
   ${(props) =>
     !props.container &&
