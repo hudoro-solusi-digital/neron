@@ -59,6 +59,11 @@ export const fontSizes = {
   XXS: "12px",
 };
 
+export const shadows = {
+  topNav: "0 2px 20px rgba(0, 0, 0, .15)",
+  containerShadow: "0 0 25px rgba(0, 0, 0, .15)",
+};
+
 export const buttonThemes = {
   primary: {
     background: colors.primary[100],
