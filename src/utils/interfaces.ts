@@ -54,6 +54,7 @@ export interface IAvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
 }
 
 export interface IGridProps {
+  gap?: number;
   container?: boolean;
   size?: GridSizeType;
   mdSize?: GridSizeType;
