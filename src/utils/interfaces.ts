@@ -77,4 +77,5 @@ export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
 export interface ILabelValueProps {
   label: string;
   value: string;
+  valueColor?: string;
 }
