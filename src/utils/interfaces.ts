@@ -3,6 +3,7 @@ import {
   HTMLAttributes,
   ImgHTMLAttributes,
   InputHTMLAttributes,
+  ReactNode,
   SVGProps,
 } from "react";
 import {
@@ -78,4 +79,8 @@ export interface ILabelValueProps {
   label: string;
   value: string;
   valueColor?: string;
+}
+
+export interface ICardProps {
+  children: ReactNode;
 }
