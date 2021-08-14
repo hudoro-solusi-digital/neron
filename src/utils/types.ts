@@ -24,4 +24,4 @@ export type AlignItemsType = "center" | "flex-end" | "flex-start";
 export type InputVariantType = "basic" | "labeled" | "password";
 export type SpacingType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 export type InputType = "text" | "email" | "password" | "tel" | "number";
-export type IconType = keyof typeof Icons
+export type IconType = keyof typeof Icons;
