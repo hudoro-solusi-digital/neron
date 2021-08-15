@@ -3,14 +3,18 @@
 Using npm:
 
 ```bash
-$ npm i @hudoro/neron
+$ npm i @hudoro/neron styled-components
 ```
 
 Using yarn:
 
 ```bash
-$ yarn add @hudoro/neron
+$ yarn add @hudoro/neron styled-components
 ```
+
+**Note**: styled-components is required for this library.
+
+For more informastion about [styled-components](https://styled-components.com)
 
 ## Basic Usage
 
