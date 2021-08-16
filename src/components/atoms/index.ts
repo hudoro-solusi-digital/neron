@@ -10,6 +10,7 @@ import Toggler from "./Toggler";
 import Icon from "./Icon";
 import LabelValue from "./LabelValue";
 import Card from "./Card";
+import Pagination from "./Pagination";
 
 export {
   Button,
@@ -24,4 +25,5 @@ export {
   Icon,
   LabelValue,
   Card,
+  Pagination,
 };

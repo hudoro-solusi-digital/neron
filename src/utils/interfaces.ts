@@ -84,3 +84,12 @@ export interface ILabelValueProps {
 export interface ICardProps {
   children: ReactNode;
 }
+
+export interface IPaginationProps {
+  numberOfPages: number;
+  pagesLimit?: number;
+  currentPage?: number;
+  nextButtonEvent: () => void;
+  previousButtonEvent: () => void;
+  pageButtonEvent: () => void;
+}
