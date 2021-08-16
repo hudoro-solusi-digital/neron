@@ -1,46 +1,57 @@
-## How to start
+# Contributing
 
-Using npm:
+First of all, we want to say thank you for taking the time to contribute. You are awesome! 👍
 
-```bash
-$ npm install
+## What to do first?
+
+When contributing to this repository, please discuss the change you wish to make via [issues](https://github.com/hudoro-solusi-digital/neron/issues) before making changes.
+
+## General Guidelines
+
+- If adding a new feature, write the corresponding storybook and test for the new feature
+- Ensure that nothing is broken. You can use the storybook to see if everything is fine.
+- Use prettier before commiting.
+- Yarn is preferred
+
+## Setup
+
+### Pre-requisites
+
+- Node: `^9.0.0`
+- Yarn
+
+### Install
+
+1. Fork the repository and create your own branch
+2. Install the dependencies
+
+```sh
+yarn install
 ```
 
-Using yarn:
+### Developing
 
-```bash
-$ yarn
+```sh
+# Launch the storybook
+yarn storybook
+
+# Run tests
+yarn test
+
+# Prettify all the things
+yarn prettier
 ```
 
-After install dependencies, `node_modules` in root project will be generated. After that you can start to create another component inside components folder.
+### Project structure
 
-## How to run your component
+#### components
 
-Neron also provide `example` folder inside `src` folder. Example folder is dummy project that created using `create react app` and you can use that as a common react project to run your component inside `App.tsx`.
+Is where the components should be written
 
-Before you can use the example project, don't forget to install all dependencies.
+#### stories
 
-1. Go to root project, and build your component design system
+Where you should write your storybook
 
-```bash
-yarn build
-```
+#### utils
 
-2. Go to example folder inside src folder and run:
-
-```bash
-yarn && yarn start
-```
-
-example project will run at `localhost:3000` (by default)
-
-3. Import and use your component inside `App.tsx` on example folder
-   sample on `App.tsx`
-
-```js
-import { Hello } from "neron";
-
-export default function App() {
-  return <Hello />;
-}
-```
+All the utilities like interfaces, types, etc.
