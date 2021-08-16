@@ -1,44 +1,121 @@
-## How to start
+## Instalation
 
 Using npm:
 
 ```bash
-$ npm install
+$ npm i @hudoro/neron styled-components
 ```
 
 Using yarn:
 
 ```bash
-$ yarn 
+$ yarn add @hudoro/neron styled-components
 ```
 
-After install dependencies, `node_modules` in root project will be generated. After that you can start to create another component inside components folder.
+**Note**: styled-components is required for this library.
 
-## How to run your component
+For more information about [styled-components](https://styled-components.com)
 
-Neron also provide `example` folder inside `src` folder. Example folder is dummy project that created using `create react app` and you can use that as a common react project to run your component inside `App.tsx`.
+## Basic Usage
 
-Before you can use the example project, don't forget to install all dependencies.
-
-1. Go to root project, and build your component design system
-```bash
-yarn build
-```
-
-2. Go to example folder inside src folder and run:
-```bash
-yarn && yarn start
-```
-example project will run at `localhost:3000` (by default)
-
-3. Import and use your component inside `App.tsx` on example folder
-sample on `App.tsx`
-```js
-import { Hello } from 'neron';
+```jsx
+import { Avatar } from "@hudoro/neron";
 
 export default function App() {
   return (
-    <Hello />
+    <Avatar
+      src="https://i.pinimg.com/originals/56/4a/2b/564a2b415569179ae577e79e4f9cb666.jpg"
+      size="m"
+    />
   );
 }
 ```
+
+## API
+
+### Avatar
+
+| Parameter | Usage             | Type                                            | Example                                                                            |
+| --------- | ----------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------- |
+| src       | Adding Image URL  | string (optional), will use default image when src not provided                               | src="https://i.pinimg.com/originals/56/4a/2b/564a2b415569179ae577e79e4f9cb666.jpg" |
+| size      | Adding Image Size | "s" \| "xs" \| "m" \| "l" \| "xl" (default="m") | size="m"                                                                           |
+
+### Button
+
+| Parameter | Usage                 | Type                                           | Example                       |
+| --------- | --------------------- | ---------------------------------------------- | ----------------------------- |
+| variant   | Adding button variant | "primary" \| "secondary" \| "ghost" (required) | variant="primary"             |
+| children  | Adding button content | string \| JSX Component (required)             | Some Text \| <YourComponent/> |
+| theme     | Adding button theme   | `{ background?: string; foreground?:string }`  | theme={{ background: #fff; foreground: #000 }}                      |
+
+### Checkbox
+
+| Parameter | Usage                    | Type                    | Example                  |
+| --------- | ------------------------ | ----------------------- | ------------------------ |
+| checked   | Adding checked state     | boolean (default=false) | checked={false}          |
+| label     | Adding label to Checkbox | string                  | label="Click Me Please!" |
+| disabled  | Adding disabled state    | boolean (default=false) | disabled={true}          |
+
+### Grid
+
+| Parameter      | Usage                  | Type                                                                                          | Example                 |
+| -------------- | ---------------------- | --------------------------------------------------------------------------------------------- | ----------------------- |
+| gap            | Adding gap             | number                                                                                        | gap={10}                |
+| container      | Adding container       | boolean                                                                                       | container={false}       |
+| size           | Adding size            | 1 \| 2 \| 3 \| 4 \| 5 \| 6 \| 7 \| 8 \| 9 \| 10 \| 11 \| 12                                   | size={1}                |
+| mdSize         | Adding medium size     | 1 \| 2 \| 3 \| 4 \| 5 \| 6 \| 7 \| 8 \| 9 \| 10 \| 11 \| 12                                   | mdSize={2}              |
+| smSize         | Adding small size      | 1 \| 2 \| 3 \| 4 \| 5 \| 6 \| 7 \| 8 \| 9 \| 10 \| 11 \| 12                                   | smSize={4}              |
+| flexDirection  | Adding flex direction  | "column" \| "row"                                                                             | flexDirection="column"  |
+| justifyContent | Adding justify content | "space-around" \| "space-between" \| "space-evenly" \| "flex-end" \| "flex-start" \| "center" | justifyContent="center" |
+| alignItems     | Adding align items     | "flex-end" \| "flex-start" \| "center"                                                        | alignItems="flex-end"   |
+
+### Input
+
+| Parameter      | Usage                      | Type                                                                                                                                                                                                                                                                                                                           | Example                     |
+| -------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------- |
+| placeholder    | Adding placeholder         | string                                                                                                                                                                                                                                                                                                                         | placeholder="Email Address" |
+| label          | Adding label               | string                                                                                                                                                                                                                                                                                                                         | label="Email Address"       |
+| error          | Adding error state         | boolean                                                                                                                                                                                                                                                                                                                        | error={false}               |
+| iconLeft       | Adding left icon           | refer to IconType | iconLeft="IcEye"            |
+| iconRight      | Adding right icon          | refer to IconType | iconRight="IcEye"           |
+| type           | Adding type input          | "number" \| "text" \| "tel" \| "email" \| "password"                                                                                                                                                                                                                                                                           | type="text"                 |
+| iconLeftEvent  | Adding event to left icon  | (() => void)                                                                                                                                                                                                                                                                                                                   | iconLeftEvent={yourEvent}   |
+| iconRightEvent | Adding event to right icon | (() => void)                                                                                                                                                                                                                                                                                                                   | iconRightEvent={yourEvent}  |
+
+### LabelValue
+
+| Parameter | Usage                 | Type              | Example            |
+| --------- | --------------------- | ----------------- | ------------------ |
+| disabled  | Adding disabled state | boolean           | disabled={false}   |
+| label     | Adding label          | string (required) | label="Username"   |
+| name      | Adding variant        | string (required) | variant="username" |
+
+### Lozenge
+
+| Parameter | Usage                 | Type                                                                                                                                                                                                 | Example                |
+| --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| variant   | Adding disabled state | refer to LozengColorAndVariantType | variant="black-strong" |
+| label     | Adding label          | string                                                                                                                                                                                               | label="My Label"       |
+
+### Radio
+
+| Parameter | Usage        | Type   | Example          |
+| --------- | ------------ | ------ | ---------------- |
+| label     | Adding label | string | label="My Label" |
+
+### Text
+
+| Parameter | Usage                       | Type                                                     | Example          |
+| --------- | --------------------------- | -------------------------------------------------------- | ---------------- |
+| variant   | Adding variant              | "h1" \| "h2" \| "h3" \| "h4" \| "p" \| "mute" (required) | label="My Label" |
+| children  | Adding component or content | string \| JSX Component (required)                       | label="My Label" |
+
+### Toggler
+
+| Parameter | Usage                | Type    | Example         |
+| --------- | -------------------- | ------- | --------------- |
+| checked   | Adding checked state | boolean | checked={false} |
+
+## Contributing
+
+Check out the [Contributing Guidelines](CONTRIBUTING.md)
