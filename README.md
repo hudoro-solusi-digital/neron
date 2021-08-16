@@ -14,12 +14,12 @@ $ yarn add @hudoro/neron styled-components
 
 **Note**: styled-components is required for this library.
 
-For more informastion about [styled-components](https://styled-components.com)
+For more information about [styled-components](https://styled-components.com)
 
 ## Basic Usage
 
 ```jsx
-import { Avatar } from "neron";
+import { Avatar } from "@hudoro/neron";
 
 export default function App() {
   return (
@@ -37,7 +37,7 @@ export default function App() {
 
 | Parameter | Usage             | Type                                            | Example                                                                            |
 | --------- | ----------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------- |
-| src       | Adding Image URL  | string (required)                               | src="https://i.pinimg.com/originals/56/4a/2b/564a2b415569179ae577e79e4f9cb666.jpg" |
+| src       | Adding Image URL  | string (optional), will use default image when src not provided                               | src="https://i.pinimg.com/originals/56/4a/2b/564a2b415569179ae577e79e4f9cb666.jpg" |
 | size      | Adding Image Size | "s" \| "xs" \| "m" \| "l" \| "xl" (default="m") | size="m"                                                                           |
 
 ### Button
@@ -46,7 +46,7 @@ export default function App() {
 | --------- | --------------------- | ---------------------------------------------- | ----------------------------- |
 | variant   | Adding button variant | "primary" \| "secondary" \| "ghost" (required) | variant="primary"             |
 | children  | Adding button content | string \| JSX Component (required)             | Some Text \| <YourComponent/> |
-| theme     | Adding button theme   | `{ background?: string; foreground?:string }`  | size="m"                      |
+| theme     | Adding button theme   | `{ background?: string; foreground?:string }`  | theme={{ background: #fff; foreground: #000 }}                      |
 
 ### Checkbox
 
@@ -76,8 +76,8 @@ export default function App() {
 | placeholder    | Adding placeholder         | string                                                                                                                                                                                                                                                                                                                         | placeholder="Email Address" |
 | label          | Adding label               | string                                                                                                                                                                                                                                                                                                                         | label="Email Address"       |
 | error          | Adding error state         | boolean                                                                                                                                                                                                                                                                                                                        | error={false}               |
-| iconLeft       | Adding left icon           | "IcEye" \| "IcEyeSlash" \| "IcCheck" \| "IcHamburger" \| "IcNotification" \| "IcSettings" \| "IcUser" \| "IcLogout" \| "IcDashboard" \| "IcSwap" \| "IcLogin" \| "IcInfo" \| "IcHistory" \| "IcTrash" \| "IcSearch" \| "IcArrowDown" \| "IcArrowUp" \| "IcArrowRight" \| "IcArrowLeft" \| "IcWallet" \| "IcDollar" \| "IcSend" | iconLeft="IcEye"            |
-| iconRight      | Adding right icon          | "IcEye" \| "IcEyeSlash" \| "IcCheck" \| "IcHamburger" \| "IcNotification" \| "IcSettings" \| "IcUser" \| "IcLogout" \| "IcDashboard" \| "IcSwap" \| "IcLogin" \| "IcInfo" \| "IcHistory" \| "IcTrash" \| "IcSearch" \| "IcArrowDown" \| "IcArrowUp" \| "IcArrowRight" \| "IcArrowLeft" \| "IcWallet" \| "IcDollar" \| "IcSend" | rightLeft="IcEye"           |
+| iconLeft       | Adding left icon           | refer to IconType | iconLeft="IcEye"            |
+| iconRight      | Adding right icon          | refer to IconType | rightLeft="IcEye"           |
 | type           | Adding type input          | "number" \| "text" \| "tel" \| "email" \| "password"                                                                                                                                                                                                                                                                           | type="text"                 |
 | iconLeftEvent  | Adding event to left icon  | (() => void)                                                                                                                                                                                                                                                                                                                   | iconLeftEvent={yourEvent}   |
 | iconRightEvent | Adding event to right icon | (() => void)                                                                                                                                                                                                                                                                                                                   | iconRightEvent={yourEvent}  |
@@ -94,7 +94,7 @@ export default function App() {
 
 | Parameter | Usage                 | Type                                                                                                                                                                                                 | Example                |
 | --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| variant   | Adding disabled state | "black-strong" \| "black-light" \| "primary-strong" \| "primary-light" \| "danger-strong" \| "danger-light" \| "success-strong" \| "success-light" \| "warning-strong" \| "warning-light" (required) | variant="black-strong" |
+| variant   | Adding disabled state | refer to LozengColorAndVariantType | variant="black-strong" |
 | label     | Adding label          | string                                                                                                                                                                                               | label="My Label"       |
 
 ### Radio
