@@ -18,5 +18,5 @@ const Template: Story<any> = (args) => (
 export const PaginationComponent = Template.bind({});
 
 PaginationComponent.args = {
-  numberOfPages: 5,
+  numberOfPages: 15,
 };

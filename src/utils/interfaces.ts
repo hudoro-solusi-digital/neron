@@ -87,7 +87,7 @@ export interface ICardProps {
 
 export interface IPaginationProps {
   numberOfPages: number;
-  pagesLimit?: number;
+  pagesLimit: number;
   currentPage?: number;
   nextButtonEvent: () => void;
   previousButtonEvent: () => void;

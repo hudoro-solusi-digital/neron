@@ -1,17 +1,14 @@
 import React, { SyntheticEvent } from "react";
 import { IAvatarProps } from "../../../utils";
 import { Image } from "./styles";
+import User from "./user.png";
 
 function Avatar({ size, src, ...rest }: IAvatarProps) {
-  const defaultImage =
-    "https://www.insoft.co.id/wp-content/uploads/2014/05/default-user-image.png";
   const onError = (e: SyntheticEvent<HTMLImageElement>) => {
     e.currentTarget.onerror = null;
-    e.currentTarget.src = defaultImage;
+    e.currentTarget.src = User;
   };
-  return (
-    <Image {...rest} onError={onError} src={src || defaultImage} size={size} />
-  );
+  return <Image {...rest} onError={onError} src={src || User} size={size} />;
 }
 
 export default Avatar;
