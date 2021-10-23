@@ -71,3 +71,11 @@ export const Label = styled.label`
   display: block;
   margin-bottom: 5px;
 `;
+
+export const Message = styled.label`
+  font-family: ${fontFamilies.openSans};
+  font-size: ${fontSizes.XXS};
+  color: ${colors.black[100]};
+  display: block;
+  margin-top: 5px;
+`;

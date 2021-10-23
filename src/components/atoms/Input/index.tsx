@@ -1,6 +1,6 @@
 import React from "react";
 import { IInputProps } from "../../../utils";
-import { Wrapper, Label, StyledInput, InputWrapper } from "./styles";
+import { Wrapper, Label, StyledInput, InputWrapper, Message } from "./styles";
 import Icon from "../Icon";
 import { colors } from "../../../utils";
 
@@ -12,6 +12,7 @@ function Input({
   type = "text",
   iconLeftEvent,
   iconRightEvent,
+  message,
   ...rest
 }: IInputProps) {
   return (
@@ -45,6 +46,7 @@ function Input({
           />
         )}
       </InputWrapper>
+      {message && <Message>{message}</Message>}
     </Wrapper>
   );
 }
