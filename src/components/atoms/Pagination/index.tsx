@@ -8,7 +8,6 @@ import { ButtonContainer } from "./styles";
 function Pagination({
   numberOfPages,
   currentPage,
-  pagesLimit,
   nextButtonEvent,
   previousButtonEvent,
   pageButtonEvent,
