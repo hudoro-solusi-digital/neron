@@ -7,16 +7,16 @@ import {
   SVGProps,
 } from "react";
 import {
+  AlignItemsType,
   ButtonVariantType,
+  FlexDirectionType,
+  GridSizeType,
+  IconType,
+  InputType,
+  JustifyContentType,
+  LozengeColorAndVariantType,
   SizeType,
   TextVariantType,
-  LozengeColorAndVariantType,
-  GridSizeType,
-  JustifyContentType,
-  AlignItemsType,
-  FlexDirectionType,
-  InputType,
-  IconType,
 } from "./types";
 
 export interface IButtonTheme {
@@ -73,6 +73,7 @@ export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   iconLeft?: IconType;
   iconLeftEvent?: () => void;
   iconRightEvent?: () => void;
+  message?: string;
 }
 
 export interface ILabelValueProps {
@@ -81,6 +82,15 @@ export interface ILabelValueProps {
   valueColor?: string;
 }
 
-export interface ICardProps {
+export interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
+}
+
+export interface IPaginationProps {
+  numberOfPages: number;
+  pagesLimit: number;
+  currentPage?: number;
+  nextButtonEvent: () => void;
+  previousButtonEvent: () => void;
+  pageButtonEvent: () => void;
 }
