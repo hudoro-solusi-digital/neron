@@ -7,16 +7,16 @@ import {
   SVGProps,
 } from "react";
 import {
+  AlignItemsType,
   ButtonVariantType,
+  FlexDirectionType,
+  GridSizeType,
+  IconType,
+  InputType,
+  JustifyContentType,
+  LozengeColorAndVariantType,
   SizeType,
   TextVariantType,
-  LozengeColorAndVariantType,
-  GridSizeType,
-  JustifyContentType,
-  AlignItemsType,
-  FlexDirectionType,
-  InputType,
-  IconType,
 } from "./types";
 
 export interface IButtonTheme {
@@ -82,7 +82,7 @@ export interface ILabelValueProps {
   valueColor?: string;
 }
 
-export interface ICardProps {
+export interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 

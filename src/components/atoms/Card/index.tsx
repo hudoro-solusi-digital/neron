@@ -9,8 +9,8 @@ export const Wrapper = styled.div`
   border-radius: 10px;
 `;
 
-function Card({ children }: ICardProps) {
-  return <Wrapper>{children}</Wrapper>;
+function Card({ children, ...rest }: ICardProps) {
+  return <Wrapper {...rest}>{children}</Wrapper>;
 }
 
 export default Card;

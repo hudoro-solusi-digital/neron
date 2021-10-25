@@ -21,8 +21,14 @@ import IcArrowLeft from "./IcArrowLeft";
 import IcWallet from "./IcWallet";
 import IcDollar from "./IcDollar";
 import IcSend from "./IcSend";
+import IcVideo from "./IcVideo";
+import IcIdCard from "./IcIdCard";
+import IcProjector from "./IcProjector";
+import IcBook from "./IcBook";
 
 const Icons = {
+  IcIdCard: <IcIdCard />,
+  IcVideo: <IcVideo />,
   IcEye: <IcEye />,
   IcEyeSlash: <IcEyeSlash />,
   IcCheck: <IcCheck />,
@@ -45,6 +51,8 @@ const Icons = {
   IcWallet: <IcWallet />,
   IcDollar: <IcDollar />,
   IcSend: <IcSend />,
+  IcProjector: <IcProjector />,
+  IcBook: <IcBook />,
 };
 
 export default Icons;
