@@ -11,6 +11,7 @@ import Icon from "./Icon";
 import LabelValue from "./LabelValue";
 import Card from "./Card";
 import Pagination from "./Pagination";
+import Select from "./Select";
 
 export {
   Button,
@@ -26,4 +27,5 @@ export {
   LabelValue,
   Card,
   Pagination,
+  Select,
 };

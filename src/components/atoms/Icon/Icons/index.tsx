@@ -28,8 +28,10 @@ import IcBook from "./IcBook";
 import IcSquares from "./IcSquares";
 import IcQuestion from "./IcQuestion";
 import IcBranch from "./IcBranch";
+import IcClose from "./IcClose";
 
 const Icons = {
+  IcClose: <IcClose />,
   IcBranch: <IcBranch />,
   IcQuestion: <IcQuestion />,
   IcSquares: <IcSquares />,
