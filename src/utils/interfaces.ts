@@ -94,3 +94,17 @@ export interface IPaginationProps {
   previousButtonEvent: () => void;
   pageButtonEvent: () => void;
 }
+
+export interface ISelectItem {
+  id: number | string;
+  value: any;
+  label: string;
+}
+
+export interface ISelectProps {
+  multiple?: boolean;
+  items: ISelectItem[];
+  onChange: (value: ISelectItem | ISelectItem[] | null) => void;
+  disabled?: boolean;
+  placeholder?: string;
+}

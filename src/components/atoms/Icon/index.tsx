@@ -5,7 +5,7 @@ import Icons from "./Icons";
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
   iconName: IconType;
-  size?: 16 | 24 | 32;
+  size?: 12 | 16 | 24 | 32;
   color?: string;
 }
 

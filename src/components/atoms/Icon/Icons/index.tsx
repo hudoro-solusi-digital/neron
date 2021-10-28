@@ -25,8 +25,16 @@ import IcVideo from "./IcVideo";
 import IcIdCard from "./IcIdCard";
 import IcProjector from "./IcProjector";
 import IcBook from "./IcBook";
+import IcSquares from "./IcSquares";
+import IcQuestion from "./IcQuestion";
+import IcBranch from "./IcBranch";
+import IcClose from "./IcClose";
 
 const Icons = {
+  IcClose: <IcClose />,
+  IcBranch: <IcBranch />,
+  IcQuestion: <IcQuestion />,
+  IcSquares: <IcSquares />,
   IcIdCard: <IcIdCard />,
   IcVideo: <IcVideo />,
   IcEye: <IcEye />,

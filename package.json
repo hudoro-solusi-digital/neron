@@ -1,6 +1,6 @@
 {
   "name": "@hudoro/neron",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Design System For Web Application",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
@@ -25,7 +25,10 @@
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "patch": "npm version patch --force && npm publish",
+    "minor": "npm version minor --force && npm publish",
+    "major": "npm version major --force && npm publish"
   },
   "peerDependencies": {
     "react": "^17.0.2",
