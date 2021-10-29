@@ -1,6 +1,7 @@
 import React, { MouseEvent, ReactNode } from "react";
-import { Icon, Text } from "../..";
-import { colors, ISelectItem } from "../../../..";
+import Text from "../../Text";
+import Icon from "../../Icon";
+import { colors, ISelectItem } from "../../../../utils";
 import { Wrapper } from "./styles";
 
 interface IProps {

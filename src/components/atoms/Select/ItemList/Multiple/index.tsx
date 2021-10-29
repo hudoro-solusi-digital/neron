@@ -1,6 +1,6 @@
 import React from "react";
-import { Text } from "../../..";
-import { ISelectItem } from "../../../../..";
+import Text from "../../../Text";
+import { ISelectItem } from "../../../../../utils";
 import SelectItem from "../SelectItem";
 
 interface IProps {

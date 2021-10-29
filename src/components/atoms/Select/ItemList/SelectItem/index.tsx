@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
-import { Text } from "../../..";
-import { ISelectItem } from "../../../../..";
+import Text from "../../../Text";
+import { ISelectItem } from "../../../../../utils";
 import { EllipsisContainer, Wrapper } from "./styles";
 
 interface IProps {
