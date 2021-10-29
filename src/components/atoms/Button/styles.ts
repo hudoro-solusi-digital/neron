@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import {
-  buttonThemes,
-  colors,
-  fontFamilies,
-  spacing,
-} from "../../../utils/styles";
+import { buttonThemes, colors, fontFamilies, spacing } from "../../../utils";
 
 export const PrimaryButton = styled.button`
   background-color: ${(props) => props.theme.background || colors.primary[100]};

@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 import styled from "styled-components";
-import { fontFamilies } from "../../..";
+import { fontFamilies } from "../../../utils";
 
 export const Wrapper = styled.div`
   position: relative;
