@@ -108,3 +108,11 @@ export interface ISelectProps {
   disabled?: boolean;
   placeholder?: string;
 }
+
+export interface IFileInputProps {
+  onChange: (file: FileList | File | null) => void;
+  name?: string;
+  accept?: string;
+  multiple?: boolean;
+  maxFiles?: number;
+}
