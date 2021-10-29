@@ -9,9 +9,9 @@ export default {
 const Template: Story<any> = (args) => (
   <Pagination
     {...args}
-    previousButtonEvent={() => console.log("Previous")}
-    nextButtonEvent={() => console.log("Next")}
-    pageButtonEvent={() => console.log("Page button")}
+    previousButtonEvent={(page) => console.log("On page: ", page)}
+    nextButtonEvent={(page) => console.log("On page: ", page)}
+    pageButtonEvent={(page) => console.log("On page: ", page)}
   />
 );
 

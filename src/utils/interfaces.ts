@@ -88,11 +88,10 @@ export interface ICardProps extends HTMLAttributes<HTMLDivElement> {
 
 export interface IPaginationProps {
   numberOfPages: number;
-  pagesLimit: number;
   currentPage?: number;
-  nextButtonEvent: () => void;
-  previousButtonEvent: () => void;
-  pageButtonEvent: () => void;
+  nextButtonEvent?: (currentPage: number) => void;
+  previousButtonEvent?: (currentPage: number) => void;
+  pageButtonEvent?: (currentPage: number) => void;
 }
 
 export interface ISelectItem {

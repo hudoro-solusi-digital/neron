@@ -16,6 +16,9 @@ function Pagination({
     currentPage || 1,
   );
   const [arrayOfCurrentPages, setArrayOfCurrentPages] = useState<any[]>([]);
+  const leftDots = "... ";
+  const middleDots = "...";
+  const rightDots = " ...";
 
   const arrayOfPages: number[] = [];
 
@@ -24,29 +27,39 @@ function Pagination({
   }
 
   const handlePreviousButtonEvent = () => {
-    setCurrentPageState((prev: number) => (prev === 1 ? prev : prev - 1));
+    const page =
+      currentPageState === 1 ? currentPageState : currentPageState - 1;
+    setCurrentPageState(page);
     if (currentPageState <= 1) return;
-    previousButtonEvent();
+    if (previousButtonEvent) {
+      previousButtonEvent(page);
+    }
   };
 
   const handleNextButtonEvent = () => {
-    setCurrentPageState((prev: number) =>
-      prev >= numberOfPages ? prev : prev + 1,
-    );
+    const page =
+      currentPageState >= numberOfPages
+        ? currentPageState
+        : currentPageState + 1;
+    setCurrentPageState(page);
     if (currentPageState >= numberOfPages) return;
-    nextButtonEvent();
+    if (nextButtonEvent) {
+      nextButtonEvent(page);
+    }
   };
 
-  const handlePageButtonEvent = (page: number) => {
+  const handlePageButtonEvent = (page: any) => {
     setCurrentPageState(page);
-    pageButtonEvent();
+    if (page === middleDots || page === leftDots || page === rightDots) {
+      return;
+    }
+    if (pageButtonEvent) {
+      pageButtonEvent(page);
+    }
   };
 
   useEffect(() => {
     let tempArrayOfPages: any[] = [...arrayOfCurrentPages];
-    const leftDots = "... ";
-    const middleDots = "...";
-    const rightDots = " ...";
 
     // TODO Refactor this
     if (arrayOfPages.length < 6) {
@@ -80,13 +93,17 @@ function Pagination({
       const sliced = arrayOfPages.slice(arrayOfPages.length - 4); //
       tempArrayOfPages = [1, leftDots, ...sliced];
     } else if (currentPageState === middleDots) {
-      setCurrentPageState(
-        arrayOfCurrentPages[arrayOfCurrentPages.length - 3] + 1,
-      );
+      let curr = arrayOfCurrentPages[arrayOfCurrentPages.length - 3] + 1;
+      setCurrentPageState(curr);
+      handlePageButtonEvent(curr);
     } else if (currentPageState === rightDots) {
-      setCurrentPageState(arrayOfCurrentPages[3] + 2);
+      let curr = arrayOfCurrentPages[3] + 2;
+      setCurrentPageState(curr);
+      handlePageButtonEvent(curr);
     } else if (currentPageState === leftDots) {
-      setCurrentPageState(arrayOfCurrentPages[3] - 2);
+      let curr = arrayOfCurrentPages[3] - 2;
+      setCurrentPageState(curr);
+      handlePageButtonEvent(curr);
     }
     setArrayOfCurrentPages(tempArrayOfPages);
   }, [currentPageState]);
