@@ -29,8 +29,12 @@ import IcSquares from "./IcSquares";
 import IcQuestion from "./IcQuestion";
 import IcBranch from "./IcBranch";
 import IcClose from "./IcClose";
+import IcUpload from "./IcUpload";
+import IcDownload from "./IcDownload";
 
 const Icons = {
+  IcDownload: <IcDownload />,
+  IcUpload: <IcUpload />,
   IcClose: <IcClose />,
   IcBranch: <IcBranch />,
   IcQuestion: <IcQuestion />,
