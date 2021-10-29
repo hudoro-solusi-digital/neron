@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, fontFamilies } from "../../../../..";
+import { fontFamilies, colors } from "../../../../../utils";
 
 interface IProps {
   selected?: boolean;
