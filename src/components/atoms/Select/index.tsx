@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useState } from "react";
-import { Grid, Icon } from "..";
-import { colors, ISelectItem, ISelectProps } from "../../..";
+import Grid from "../Grid";
+import Icon from "../Icon";
+import { colors, ISelectItem, ISelectProps } from "../../../utils";
 import ItemList from "./ItemList";
 import SelectedItem from "./SelectedItem";
 import { Input, inputContainer, Wrapper } from "./styles";

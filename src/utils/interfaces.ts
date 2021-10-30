@@ -88,17 +88,17 @@ export interface ICardProps extends HTMLAttributes<HTMLDivElement> {
 
 export interface IPaginationProps {
   numberOfPages: number;
-  pagesLimit: number;
   currentPage?: number;
-  nextButtonEvent: () => void;
-  previousButtonEvent: () => void;
-  pageButtonEvent: () => void;
+  nextButtonEvent?: (currentPage: number) => void;
+  previousButtonEvent?: (currentPage: number) => void;
+  pageButtonEvent?: (currentPage: number) => void;
 }
 
 export interface ISelectItem {
   id: number | string;
   value: any;
   label: string;
+  image?: string;
 }
 
 export interface ISelectProps {
@@ -107,4 +107,12 @@ export interface ISelectProps {
   onChange: (value: ISelectItem | ISelectItem[] | null) => void;
   disabled?: boolean;
   placeholder?: string;
+}
+
+export interface IFileInputProps {
+  onChange: (file: FileList | File | null) => void;
+  name?: string;
+  accept?: string;
+  multiple?: boolean;
+  maxFiles?: number;
 }

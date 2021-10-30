@@ -1,5 +1,5 @@
 import React from "react";
-import { ISelectItem } from "../../../..";
+import { ISelectItem } from "../../../../utils";
 import Multiple from "./Multiple";
 import NonMultiple from "./NonMultiple";
 import { Wrapper } from "./styles";

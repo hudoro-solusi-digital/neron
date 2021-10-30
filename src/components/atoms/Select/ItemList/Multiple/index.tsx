@@ -1,6 +1,6 @@
 import React from "react";
-import { Text } from "../../..";
-import { ISelectItem } from "../../../../..";
+import { ISelectItem } from "../../../../../utils";
+import Text from "../../../Text";
 import SelectItem from "../SelectItem";
 
 interface IProps {
@@ -33,7 +33,7 @@ export default function Multiple({
     <>
       {filteredList.length > 0 ? (
         filteredList.map((item) => (
-          <SelectItem item={item} onSelect={onSelect} key={item.id}>
+          <SelectItem item={item} onSelect={onSelect}>
             {item.label}
           </SelectItem>
         ))
