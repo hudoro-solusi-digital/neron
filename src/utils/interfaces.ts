@@ -98,6 +98,7 @@ export interface ISelectItem {
   id: number | string;
   value: any;
   label: string;
+  image?: string;
 }
 
 export interface ISelectProps {
