@@ -4,6 +4,7 @@ import { ISelectProps, ISelectItem } from "../../utils";
 
 export default {
   title: "Components/Select",
+  component: Select,
 } as Meta;
 
 const items: ISelectItem[] = [
@@ -180,7 +181,7 @@ const items: ISelectItem[] = [
 ];
 
 const Template: Story<ISelectProps> = (args) => (
-  <Select items={items} onChange={(item) => console.log(item)} {...args} />
+  <Select onChange={(item) => console.log(item)} {...args} />
 );
 
 export const SearchableSelect = Template.bind({});

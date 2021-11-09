@@ -96,15 +96,15 @@ export interface IPaginationProps {
 
 export interface ISelectItem {
   id: number | string;
-  value: any;
   label: string;
   image?: string;
+  [x: string]: any;
 }
 
 export interface ISelectProps {
   multiple?: boolean;
   items: ISelectItem[];
-  onChange: (value: ISelectItem | ISelectItem[] | null) => void;
+  onChange?: (value: ISelectItem | ISelectItem[] | null) => void;
   disabled?: boolean;
   placeholder?: string;
 }
@@ -115,4 +115,10 @@ export interface IFileInputProps {
   accept?: string;
   multiple?: boolean;
   maxFiles?: number;
+}
+
+export interface IIconProps extends HTMLAttributes<HTMLDivElement> {
+  iconName: IconType;
+  size?: 12 | 16 | 24 | 32;
+  color?: string;
 }

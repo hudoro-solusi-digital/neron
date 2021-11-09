@@ -31,6 +31,7 @@ import IcBranch from "./IcBranch";
 import IcClose from "./IcClose";
 import IcUpload from "./IcUpload";
 import IcDownload from "./IcDownload";
+import IcStar from "./IcStar";
 
 const Icons = {
   IcDownload: <IcDownload />,
@@ -65,6 +66,7 @@ const Icons = {
   IcSend: <IcSend />,
   IcProjector: <IcProjector />,
   IcBook: <IcBook />,
+  IcStar: <IcStar />,
 };
 
 export default Icons;

@@ -1,33 +1,23 @@
-import React, { HTMLAttributes } from "react";
+import React from "react";
 import styled from "styled-components";
-import { IconType } from "../../../utils";
+import { IIconProps } from "../../../utils";
 import Icons from "./Icons";
 
-interface IProps extends HTMLAttributes<HTMLDivElement> {
-  iconName: IconType;
-  size?: 12 | 16 | 24 | 32;
-  color?: string;
-}
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
+const Wrapper = styled.div<Pick<IIconProps, "size" | "color">>`
   border: none;
   outline: none;
+  width: ${(props) => props.size}px;
+  height: ${(props) => props.size}px;
+  svg {
+    width: ${(props) => props.size}px;
+    height: ${(props) => props.size}px;
+    fill: ${(props) => props.color};
+  }
 `;
 
-function Icon({ iconName, size = 16, color = "black", ...rest }: IProps) {
+function Icon({ iconName, size = 16, color = "black", ...rest }: IIconProps) {
   return (
-    <Wrapper
-      {...rest}
-      style={{
-        width: size,
-        height: size,
-        fill: color,
-      }}
-    >
+    <Wrapper {...rest} size={size} color={color}>
       {Icons[iconName]}
     </Wrapper>
   );
