@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   scrollbar-width: 0;
   max-width: 100%;
   position: absolute;
+  background-color: white;
   &::-webkit-scrollbar {
     width: 0;
     background: transparent;

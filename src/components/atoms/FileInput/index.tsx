@@ -14,6 +14,7 @@ function FileInput({
 }: IFileInputProps) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [checkFiles, setCheckFiles] = useState<FileList>();
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files && files[0]) {
@@ -27,11 +28,14 @@ function FileInput({
       return onChange(files[0]);
     }
   };
+
   const handleClearFiles = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
     setCheckFiles(undefined);
     onChange(null);
+    inputRef.current!.value = "";
   };
+
   return (
     <>
       <Input

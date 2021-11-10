@@ -17,7 +17,7 @@ export default function NonMultiple({
   selectedItem,
 }: IProps) {
   const filteredList = items.filter((item) =>
-    item.value.toString().toLowerCase().startsWith(value.toLowerCase()),
+    item.label.toString().toLowerCase().startsWith(value.toLowerCase()),
   );
   return (
     <>

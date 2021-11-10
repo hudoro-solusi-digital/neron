@@ -11,6 +11,7 @@ export const ButtonContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-color: white;
   &.disabled {
     color: ${colors.black[40]};
     svg {

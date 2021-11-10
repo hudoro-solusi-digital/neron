@@ -19,13 +19,13 @@ export default function Multiple({
   let filteredList = items.filter(
     (item) =>
       !selectedItem?.find(
-        (selected) => selected.id === item.id && selected.value === item.value,
+        (selected) => selected.id === item.id && selected.label === item.label,
       ),
   );
 
   if (value) {
     filteredList = filteredList.filter((item) =>
-      item.value.toString().toLowerCase().startsWith(value.toLowerCase()),
+      item.label.toString().toLowerCase().startsWith(value.toLowerCase()),
     );
   }
 

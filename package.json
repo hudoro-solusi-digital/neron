@@ -1,6 +1,6 @@
 {
   "name": "@hudoro/neron",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "Design System For Web Application",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
@@ -24,7 +24,7 @@
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -o ../neron-storybook",
     "prepare": "npm run build",
     "patch": "npm version patch --force && npm publish",
     "minor": "npm version minor --force && npm publish",

@@ -31,90 +31,13 @@ export default function App() {
 }
 ```
 
-## API
+## Storybook
 
-### Avatar
+You can test our components [here](https://neron-storybook.hudoro.com)
 
-| Parameter | Usage             | Type                                            | Example                                                                            |
-| --------- | ----------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------- |
-| src       | Adding Image URL  | string (optional), will use default image when src not provided                               | src="https://i.pinimg.com/originals/56/4a/2b/564a2b415569179ae577e79e4f9cb666.jpg" |
-| size      | Adding Image Size | "s" \| "xs" \| "m" \| "l" \| "xl" (default="m") | size="m"                                                                           |
+## Typeface
 
-### Button
-
-| Parameter | Usage                 | Type                                           | Example                       |
-| --------- | --------------------- | ---------------------------------------------- | ----------------------------- |
-| variant   | Adding button variant | "primary" \| "secondary" \| "ghost" (required) | variant="primary"             |
-| children  | Adding button content | string \| JSX Component (required)             | Some Text \| <YourComponent/> |
-| theme     | Adding button theme   | `{ background?: string; foreground?:string }`  | theme={{ background: #fff; foreground: #000 }}                      |
-
-### Checkbox
-
-| Parameter | Usage                    | Type                    | Example                  |
-| --------- | ------------------------ | ----------------------- | ------------------------ |
-| checked   | Adding checked state     | boolean (default=false) | checked={false}          |
-| label     | Adding label to Checkbox | string                  | label="Click Me Please!" |
-| disabled  | Adding disabled state    | boolean (default=false) | disabled={true}          |
-
-### Grid
-
-| Parameter      | Usage                  | Type                                                                                          | Example                 |
-| -------------- | ---------------------- | --------------------------------------------------------------------------------------------- | ----------------------- |
-| gap            | Adding gap             | number                                                                                        | gap={10}                |
-| container      | Adding container       | boolean                                                                                       | container={false}       |
-| size           | Adding size            | 1 \| 2 \| 3 \| 4 \| 5 \| 6 \| 7 \| 8 \| 9 \| 10 \| 11 \| 12                                   | size={1}                |
-| mdSize         | Adding medium size     | 1 \| 2 \| 3 \| 4 \| 5 \| 6 \| 7 \| 8 \| 9 \| 10 \| 11 \| 12                                   | mdSize={2}              |
-| smSize         | Adding small size      | 1 \| 2 \| 3 \| 4 \| 5 \| 6 \| 7 \| 8 \| 9 \| 10 \| 11 \| 12                                   | smSize={4}              |
-| flexDirection  | Adding flex direction  | "column" \| "row"                                                                             | flexDirection="column"  |
-| justifyContent | Adding justify content | "space-around" \| "space-between" \| "space-evenly" \| "flex-end" \| "flex-start" \| "center" | justifyContent="center" |
-| alignItems     | Adding align items     | "flex-end" \| "flex-start" \| "center"                                                        | alignItems="flex-end"   |
-
-### Input
-
-| Parameter      | Usage                      | Type                                                                                                                                                                                                                                                                                                                           | Example                     |
-| -------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------- |
-| placeholder    | Adding placeholder         | string                                                                                                                                                                                                                                                                                                                         | placeholder="Email Address" |
-| label          | Adding label               | string                                                                                                                                                                                                                                                                                                                         | label="Email Address"       |
-| error          | Adding error state         | boolean                                                                                                                                                                                                                                                                                                                        | error={false}               |
-| iconLeft       | Adding left icon           | refer to IconType | iconLeft="IcEye"            |
-| iconRight      | Adding right icon          | refer to IconType | iconRight="IcEye"           |
-| type           | Adding type input          | "number" \| "text" \| "tel" \| "email" \| "password"                                                                                                                                                                                                                                                                           | type="text"                 |
-| iconLeftEvent  | Adding event to left icon  | (() => void)                                                                                                                                                                                                                                                                                                                   | iconLeftEvent={yourEvent}   |
-| iconRightEvent | Adding event to right icon | (() => void)                                                                                                                                                                                                                                                                                                                   | iconRightEvent={yourEvent}  |
-
-### LabelValue
-
-| Parameter | Usage                 | Type              | Example            |
-| --------- | --------------------- | ----------------- | ------------------ |
-| disabled  | Adding disabled state | boolean           | disabled={false}   |
-| label     | Adding label          | string (required) | label="Username"   |
-| name      | Adding variant        | string (required) | variant="username" |
-
-### Lozenge
-
-| Parameter | Usage                 | Type                                                                                                                                                                                                 | Example                |
-| --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| variant   | Adding disabled state | refer to LozengColorAndVariantType | variant="black-strong" |
-| label     | Adding label          | string                                                                                                                                                                                               | label="My Label"       |
-
-### Radio
-
-| Parameter | Usage        | Type   | Example          |
-| --------- | ------------ | ------ | ---------------- |
-| label     | Adding label | string | label="My Label" |
-
-### Text
-
-| Parameter | Usage                       | Type                                                     | Example          |
-| --------- | --------------------------- | -------------------------------------------------------- | ---------------- |
-| variant   | Adding variant              | "h1" \| "h2" \| "h3" \| "h4" \| "p" \| "mute" (required) | label="My Label" |
-| children  | Adding component or content | string \| JSX Component (required)                       | label="My Label" |
-
-### Toggler
-
-| Parameter | Usage                | Type    | Example         |
-| --------- | -------------------- | ------- | --------------- |
-| checked   | Adding checked state | boolean | checked={false} |
+If you want to use our typeface which are [Poppins](https://fonts.google.com/specimen/Poppins) and [OpenSans](https://fonts.google.com/specimen/Open+Sans), You have to import those fonts from [Google Fonts](https://fonts.google.com/)
 
 ## Contributing
 

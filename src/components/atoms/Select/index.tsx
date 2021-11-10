@@ -36,7 +36,7 @@ export default function Select({
       onChange(item);
     }
     setSelectedItem(item);
-    setValue((item as ISelectItem).value);
+    setValue((item as ISelectItem).label);
     setIsOpen(false);
   };
 
@@ -45,13 +45,17 @@ export default function Select({
       ? [...selectedMultipleItems, item]
       : [item];
     setSelectedMultipleItems(nextState);
-    onChange(nextState);
+    if (onChange) {
+      onChange(nextState);
+    }
     setValue("");
   };
 
   const clearMultipleSelectItems = () => {
     setSelectedMultipleItems([]);
-    onChange(null);
+    if (onChange) {
+      onChange(null);
+    }
   };
 
   const onDelete = (item: ISelectItem) => {
@@ -59,7 +63,9 @@ export default function Select({
       (selected) => selected.id !== item.id && selected.value !== item.value,
     );
     setSelectedMultipleItems(filtered);
-    onChange(filtered as ISelectItem[]);
+    if (onChange) {
+      onChange(filtered);
+    }
   };
 
   return (
@@ -70,7 +76,7 @@ export default function Select({
         justifyContent="space-between"
         gap={10}
         style={{
-          backgroundColor: disabled ? colors.black[20] : "initial",
+          backgroundColor: disabled ? colors.black[20] : "white",
           border: `1px solid ${
             isOpen ? colors.primary[100] : colors.black[20]
           }`,
