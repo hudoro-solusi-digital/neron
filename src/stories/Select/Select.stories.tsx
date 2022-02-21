@@ -12,7 +12,7 @@ const items: ISelectItem[] = [
     id: 1,
     value: "Bentley",
     label: "Bentley",
-    image: "https://assets.stickpng.com/images/580b585b2edbce24c47b2c2c.png",
+    image: "https://cdn.iconscout.com/icon/free/png-256/bentley-202732.png",
   },
   {
     id: 2,
@@ -101,7 +101,7 @@ const items: ISelectItem[] = [
     value: "Lotus",
     label: "Lotus",
     image:
-      "https://www.seekpng.com/png/detail/121-1210972_free-vector-lotus-logo-lotus-car-logo-png.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Lotus_Cars_2019_logo.svg/1200px-Lotus_Cars_2019_logo.svg.png",
   },
   {
     id: 15,
