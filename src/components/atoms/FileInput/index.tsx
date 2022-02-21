@@ -7,6 +7,7 @@ import { Input } from "./styles";
 
 function FileInput({
   onChange,
+  onClear,
   name,
   accept,
   multiple,
@@ -16,6 +17,8 @@ function FileInput({
   const [checkFiles, setCheckFiles] = useState<FileList>();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.stopPropagation();
+    e.preventDefault();
     const files = e.target.files;
     if (files && files[0]) {
       if (maxFiles && files.length > maxFiles) {
@@ -31,6 +34,10 @@ function FileInput({
 
   const handleClearFiles = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
+    e.preventDefault();
+    if (onClear) {
+      onClear();
+    }
     setCheckFiles(undefined);
     onChange(null);
     inputRef.current!.value = "";

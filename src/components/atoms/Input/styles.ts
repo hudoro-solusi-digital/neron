@@ -10,13 +10,13 @@ import {
 export const Wrapper = styled.div`
   box-sizing: border-box;
   display: inline-block;
+  flex: 1;
 `;
 
 export const InputWrapper = styled.div<
   Pick<IInputProps, "iconLeftEvent" | "iconRightEvent">
 >`
   position: relative;
-  display: block;
   .icon-right {
     position: absolute;
     fill: ${colors.black[20]};

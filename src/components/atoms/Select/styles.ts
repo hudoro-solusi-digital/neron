@@ -4,6 +4,7 @@ import { fontFamilies } from "../../../utils";
 
 export const Wrapper = styled.div`
   position: relative;
+  flex: 1;
 `;
 
 export const Input = styled.input`

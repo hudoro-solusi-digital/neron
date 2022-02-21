@@ -111,6 +111,7 @@ export interface ISelectProps {
 
 export interface IFileInputProps {
   onChange: (file: FileList | File | null) => void;
+  onClear: Function;
   name?: string;
   accept?: string;
   multiple?: boolean;
