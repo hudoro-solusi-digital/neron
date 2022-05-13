@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import Grid from "../Grid";
 import Icon from "../Icon";
 import { colors, ISelectItem, ISelectProps } from "../../../utils";
@@ -12,6 +12,7 @@ export default function Select({
   multiple,
   disabled,
   placeholder,
+  defaultValue,
 }: ISelectProps) {
   const [selectedItem, setSelectedItem] = useState<ISelectItem>();
   const [selectedMultipleItems, setSelectedMultipleItems] = useState<
@@ -19,7 +20,11 @@ export default function Select({
   >([]);
   const [value, setValue] = useState<string>("");
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
+  useEffect(() => {
+    if (defaultValue) {
+      setValue(defaultValue.label);
+    }
+  }, []);
   const handleFocus = () => {
     setIsOpen((prev) => !prev);
   };
