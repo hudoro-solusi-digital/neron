@@ -32,8 +32,25 @@ import IcClose from "./IcClose";
 import IcUpload from "./IcUpload";
 import IcDownload from "./IcDownload";
 import IcStar from "./IcStar";
+import IcCopy from "./IcCopy";
+import IcApp from "./IcApp";
+import IcComment from "./IcComment";
+import IcDislike from "./IcDislike";
+import IcLike from "./IcLike";
+import IcDislikeFilled from "./IcDislikeFilled";
+import IcLikeFilled from "./IcLikeFilled";
+import IcMale from "./IcMale";
+import IcFemale from "./IcFemale";
 
 const Icons = {
+  IcFemale: <IcFemale />,
+  IcMale: <IcMale />,
+  IcLikeFilled: <IcLikeFilled />,
+  IcDislikeFilled: <IcDislikeFilled />,
+  IcLike: <IcLike />,
+  IcDislike: <IcDislike />,
+  IcComment: <IcComment />,
+  IcApp: <IcApp />,
   IcDownload: <IcDownload />,
   IcUpload: <IcUpload />,
   IcClose: <IcClose />,
@@ -67,6 +84,7 @@ const Icons = {
   IcProjector: <IcProjector />,
   IcBook: <IcBook />,
   IcStar: <IcStar />,
+  IcCopy: <IcCopy />,
 };
 
 export default Icons;

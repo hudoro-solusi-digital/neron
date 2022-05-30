@@ -179,9 +179,12 @@ const items: ISelectItem[] = [
       "https://w7.pngwing.com/pngs/1014/354/png-transparent-maserati-mc12-sports-car-mercedes-benz-maserati-emblem-logo-car.png",
   },
 ];
-
 const Template: Story<ISelectProps> = (args) => (
-  <Select onChange={(item) => console.log(item)} {...args} />
+  <Select
+    defaultValue={{ id: 99, value: "Bentley", label: "bananas" }}
+    onChange={(item) => console.log(item)}
+    {...args}
+  />
 );
 
 export const SearchableSelect = Template.bind({});
