@@ -21,12 +21,19 @@ export default function Select({
   const [value, setValue] = useState<string>("");
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  document.addEventListener("mouseup", (e) => {
+  const handleClickOutside = (e: MouseEvent) => {
     const selectWrapper = document.querySelector("#select-wrapper");
     if (!selectWrapper?.contains(e.target as Node)) {
       setIsOpen(false);
     }
-  });
+  };
+
+  useEffect(() => {
+    if (window) {
+      window.addEventListener("click", handleClickOutside);
+    }
+    return () => window.removeEventListener("click", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     if (!defaultValue?.length && !multiple) {
