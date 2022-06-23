@@ -3,6 +3,7 @@ import Text from "../../Text";
 import Icon from "../../Icon";
 import { colors, ISelectItem } from "../../../../utils";
 import { Wrapper } from "./styles";
+import Grid from "../../Grid";
 
 interface IProps {
   children: ReactNode;
@@ -16,16 +17,19 @@ export default function SelectedItem({ children, item, onDelete }: IProps) {
     onDelete(item);
   };
   return (
-    <Wrapper>
+    <Wrapper container gap={10} alignItems="center">
       <Text variant="mute" style={{ color: colors.black[80] }}>
         {children}
       </Text>
-      <Icon
+      <Grid
+        container
         onClick={(e) => handleDelete(e)}
-        iconName="IcClose"
-        size={12}
-        color={colors.black[100]}
-      />
+        style={{
+          cursor: "pointer",
+        }}
+      >
+        <Icon iconName="IcClose" size={12} color={colors.black[100]} />
+      </Grid>
     </Wrapper>
   );
 }
