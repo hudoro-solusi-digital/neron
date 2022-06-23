@@ -26,12 +26,6 @@ export default function Select({
   const handleClickOutside = (e: MouseEvent) => {
     if (dropdownRef) {
       const target = e.target;
-      console.log(
-        target,
-        !dropdownRef.current?.contains(target as Node) &&
-          !(target as Element).className.includes("select-item"),
-      );
-
       if (
         !dropdownRef.current?.contains(target as Node) &&
         !(target as Element).className.includes("select-item")
@@ -55,7 +49,6 @@ export default function Select({
   const handleSelect = (item: ISelectItem) => {
     if (onChange) {
       onChange(item);
-      console.log(item);
     }
     setSelectedItem(item);
     setValue((item as ISelectItem).label);
