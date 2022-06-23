@@ -29,19 +29,21 @@ export default function Select({
   };
 
   useEffect(() => {
+    if (defaultValue) {
+      if (!defaultValue?.length && !multiple) {
+        setValue((defaultValue as ISelectItem)?.label);
+        setSelectedItem(defaultValue as ISelectItem);
+      } else {
+        setSelectedMultipleItems(defaultValue as ISelectItem[]);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
     if (window) {
       window.addEventListener("click", handleClickOutside);
     }
     return () => window.removeEventListener("click", handleClickOutside);
-  }, []);
-
-  useEffect(() => {
-    if (!defaultValue?.length && !multiple) {
-      setValue((defaultValue as ISelectItem)?.label);
-      setSelectedItem(defaultValue as ISelectItem);
-    } else {
-      setSelectedMultipleItems(defaultValue as ISelectItem[]);
-    }
   }, []);
 
   const handleFocus = () => {
