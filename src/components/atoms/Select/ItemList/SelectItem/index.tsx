@@ -21,7 +21,12 @@ export default function SelectItem({
     onSelect(item);
   };
   return (
-    <Wrapper title={item.label} onClick={handleClick} selected={selected}>
+    <Wrapper
+      title={item.label}
+      onClick={handleClick}
+      selected={selected}
+      className="select-item"
+    >
       {item.image && <Avatar size="xs" src={item.image} />}
       <EllipsisContainer>
         <Text variant="p">{children}</Text>

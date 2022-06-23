@@ -1,6 +1,6 @@
 {
   "name": "@hudoro/neron",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "description": "Design System For Web Application",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
