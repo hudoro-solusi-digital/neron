@@ -33,7 +33,7 @@ export default function Multiple({
     <>
       {filteredList.length > 0 ? (
         filteredList.map((item) => (
-          <SelectItem item={item} onSelect={onSelect}>
+          <SelectItem item={item} onSelect={onSelect} key={item.id}>
             {item.label}
           </SelectItem>
         ))

@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react";
-import { Select } from "../../components";
+import { Grid, Select } from "../../components";
 import { ISelectProps, ISelectItem } from "../../utils";
 
 export default {
@@ -180,25 +180,48 @@ const items: ISelectItem[] = [
   },
 ];
 const Template: Story<ISelectProps> = (args) => (
-  <Select
-    defaultValue={[
-      {
-        id: 1,
-        value: "Bentley",
-        label: "Bentley",
-        image: "https://cdn.iconscout.com/icon/free/png-256/bentley-202732.png",
-      },
-      {
-        id: 2,
-        value: "Mercedes Benz",
-        label: "Mercedes Benz",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1200px-Mercedes-Logo.svg.png",
-      },
-    ]}
-    onChange={(item) => console.log(item)}
-    {...args}
-  />
+  <Grid container>
+    <Select
+      defaultValue={[
+        {
+          id: 1,
+          value: "Bentley",
+          label: "Bentley",
+          image:
+            "https://cdn.iconscout.com/icon/free/png-256/bentley-202732.png",
+        },
+        {
+          id: 2,
+          value: "Mercedes Benz",
+          label: "Mercedes Benz",
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1200px-Mercedes-Logo.svg.png",
+        },
+      ]}
+      onChange={(item) => console.log(item)}
+      {...args}
+    />
+    <Select
+      defaultValue={[
+        {
+          id: 1,
+          value: "Bentley",
+          label: "Bentley",
+          image:
+            "https://cdn.iconscout.com/icon/free/png-256/bentley-202732.png",
+        },
+        {
+          id: 2,
+          value: "Mercedes Benz",
+          label: "Mercedes Benz",
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1200px-Mercedes-Logo.svg.png",
+        },
+      ]}
+      onChange={(item) => console.log(item)}
+      {...args}
+    />
+  </Grid>
 );
 
 export const SearchableSelect = Template.bind({});

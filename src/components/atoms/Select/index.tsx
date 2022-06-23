@@ -1,7 +1,7 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import { colors, ISelectItem, ISelectProps } from "../../../utils";
 import Grid from "../Grid";
 import Icon from "../Icon";
-import { colors, ISelectItem, ISelectProps } from "../../../utils";
 import ItemList from "./ItemList";
 import SelectedItem from "./SelectedItem";
 import { Input, inputContainer, Wrapper } from "./styles";
@@ -21,10 +21,73 @@ export default function Select({
   const [value, setValue] = useState<string>("");
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
   const handleClickOutside = (e: MouseEvent) => {
-    const selectWrapper = document.querySelector("#select-wrapper");
-    if (!selectWrapper?.contains(e.target as Node)) {
-      setIsOpen(false);
+    if (dropdownRef) {
+      const target = e.target;
+      console.log(
+        target,
+        !dropdownRef.current?.contains(target as Node) &&
+          !(target as Element).className.includes("select-item"),
+      );
+
+      if (
+        !dropdownRef.current?.contains(target as Node) &&
+        !(target as Element).className.includes("select-item")
+      ) {
+        setIsOpen(false);
+      }
+    }
+  };
+
+  const handleFocus = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (!isOpen) {
+      setIsOpen(true);
+    }
+    setValue(e.target.value);
+  };
+
+  const handleSelect = (item: ISelectItem) => {
+    if (onChange) {
+      onChange(item);
+      console.log(item);
+    }
+    setSelectedItem(item);
+    setValue((item as ISelectItem).label);
+    setIsOpen(false);
+  };
+
+  const handleSelectMultiple = (item: ISelectItem) => {
+    const nextState = selectedMultipleItems
+      ? [...selectedMultipleItems, item]
+      : [item];
+    setSelectedMultipleItems(nextState);
+    if (onChange) {
+      onChange(nextState);
+    }
+    setValue("");
+    setIsOpen(true);
+  };
+
+  const clearMultipleSelectItems = () => {
+    setSelectedMultipleItems([]);
+    if (onChange) {
+      onChange(null);
+    }
+  };
+
+  const onDelete = (item: ISelectItem) => {
+    const filtered = selectedMultipleItems?.filter(
+      (selected) => selected.id !== item.id && selected.value !== item.value,
+    );
+    setSelectedMultipleItems(filtered);
+    if (onChange) {
+      onChange(filtered);
     }
   };
 
@@ -46,56 +109,8 @@ export default function Select({
     return () => window.removeEventListener("click", handleClickOutside);
   }, []);
 
-  const handleFocus = () => {
-    setIsOpen((prev) => !prev);
-  };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (!isOpen) {
-      setIsOpen(true);
-    }
-    setValue(e.target.value);
-  };
-
-  const handleSelect = (item: ISelectItem) => {
-    if (onChange) {
-      onChange(item);
-    }
-    setSelectedItem(item);
-    setValue((item as ISelectItem).label);
-    setIsOpen(false);
-  };
-
-  const handleSelectMultiple = (item: ISelectItem) => {
-    const nextState = selectedMultipleItems
-      ? [...selectedMultipleItems, item]
-      : [item];
-    setSelectedMultipleItems(nextState);
-    if (onChange) {
-      onChange(nextState);
-    }
-    setValue("");
-  };
-
-  const clearMultipleSelectItems = () => {
-    setSelectedMultipleItems([]);
-    if (onChange) {
-      onChange(null);
-    }
-  };
-
-  const onDelete = (item: ISelectItem) => {
-    const filtered = selectedMultipleItems?.filter(
-      (selected) => selected.id !== item.id && selected.value !== item.value,
-    );
-    setSelectedMultipleItems(filtered);
-    if (onChange) {
-      onChange(filtered);
-    }
-  };
-
   return (
-    <Wrapper id="select-wrapper">
+    <Wrapper id="select-wrapper" ref={dropdownRef}>
       <Grid
         container
         alignItems="center"
