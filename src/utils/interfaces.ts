@@ -107,7 +107,7 @@ export interface ISelectProps {
   onChange?: (value: ISelectItem | ISelectItem[] | null) => void;
   disabled?: boolean;
   placeholder?: string;
-  defaultValue?: ISelectItem;
+  defaultValue?: ISelectItem | ISelectItem[];
 }
 
 export interface IFileInputProps {

@@ -181,7 +181,21 @@ const items: ISelectItem[] = [
 ];
 const Template: Story<ISelectProps> = (args) => (
   <Select
-    defaultValue={{ id: 99, value: "Bentley", label: "bananas" }}
+    defaultValue={[
+      {
+        id: 1,
+        value: "Bentley",
+        label: "Bentley",
+        image: "https://cdn.iconscout.com/icon/free/png-256/bentley-202732.png",
+      },
+      {
+        id: 2,
+        value: "Mercedes Benz",
+        label: "Mercedes Benz",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1200px-Mercedes-Logo.svg.png",
+      },
+    ]}
     onChange={(item) => console.log(item)}
     {...args}
   />
@@ -190,7 +204,7 @@ const Template: Story<ISelectProps> = (args) => (
 export const SearchableSelect = Template.bind({});
 
 SearchableSelect.args = {
-  multiple: false,
+  multiple: true,
   disabled: false,
   placeholder: "",
   items,

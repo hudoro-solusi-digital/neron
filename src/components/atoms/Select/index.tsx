@@ -20,11 +20,23 @@ export default function Select({
   >([]);
   const [value, setValue] = useState<string>("");
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  document.addEventListener("mouseup", (e) => {
+    const selectWrapper = document.querySelector("#select-wrapper");
+    if (!selectWrapper?.contains(e.target as Node)) {
+      setIsOpen(false);
+    }
+  });
+
   useEffect(() => {
-    if (defaultValue) {
-      setValue(defaultValue.label);
+    if (!defaultValue?.length && !multiple) {
+      setValue((defaultValue as ISelectItem)?.label);
+      setSelectedItem(defaultValue as ISelectItem);
+    } else {
+      setSelectedMultipleItems(defaultValue as ISelectItem[]);
     }
   }, []);
+
   const handleFocus = () => {
     setIsOpen((prev) => !prev);
   };
@@ -74,7 +86,7 @@ export default function Select({
   };
 
   return (
-    <Wrapper>
+    <Wrapper id="select-wrapper">
       <Grid
         container
         alignItems="center"
@@ -113,11 +125,15 @@ export default function Select({
           {multiple &&
             selectedMultipleItems &&
             selectedMultipleItems?.length > 0 && (
-              <Icon
-                iconName="IcClose"
+              <Grid
+                container
                 onClick={clearMultipleSelectItems}
-                color={colors.primary[100]}
-              />
+                style={{
+                  cursor: "pointer",
+                }}
+              >
+                <Icon iconName="IcClose" color={colors.primary[100]} />
+              </Grid>
             )}
           <Icon
             color={isOpen ? colors.primary[100] : colors.black[40]}
