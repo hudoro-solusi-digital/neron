@@ -12,5 +12,5 @@ const Template: Story<IIconProps> = (args) => <Icon {...args} />;
 export const Icons = Template.bind({});
 
 Icons.args = {
-  iconName: "IcStar",
+  iconName: "IcEllipsis",
 };
