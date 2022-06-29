@@ -41,8 +41,12 @@ import IcDislikeFilled from "./IcDislikeFilled";
 import IcLikeFilled from "./IcLikeFilled";
 import IcMale from "./IcMale";
 import IcFemale from "./IcFemale";
+import IcEllipsis from "./IcEllipsis";
+import IcPlusCircle from "./IcPlusCircle";
 
 const Icons = {
+  IcPlusCircle: <IcPlusCircle />,
+  IcEllipsis: <IcEllipsis />,
   IcFemale: <IcFemale />,
   IcMale: <IcMale />,
   IcLikeFilled: <IcLikeFilled />,
