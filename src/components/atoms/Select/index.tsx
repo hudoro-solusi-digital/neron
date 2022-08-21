@@ -1,10 +1,17 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, {
+  ChangeEvent,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { colors, ISelectItem, ISelectProps } from "../../../utils";
 import Grid from "../Grid";
 import Icon from "../Icon";
+import Text from "../Text";
 import ItemList from "./ItemList";
 import SelectedItem from "./SelectedItem";
-import { Input, inputContainer, Wrapper } from "./styles";
+import { Input, InputWrapper, Wrapper } from "./styles";
 
 export default function Select({
   items,
@@ -20,6 +27,7 @@ export default function Select({
   >([]);
   const [value, setValue] = useState<string>("");
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [itemValue, setItemValue] = useState<string>("");
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -27,8 +35,8 @@ export default function Select({
     if (dropdownRef) {
       const target = e.target;
       if (
-        !dropdownRef.current?.contains(target as Node) &&
-        !(target as Element).className.includes("select-item")
+        !dropdownRef?.current?.contains(target as Node) &&
+        !(target as Element)?.className?.includes("select-item")
       ) {
         setIsOpen(false);
       }
@@ -44,14 +52,17 @@ export default function Select({
       setIsOpen(true);
     }
     setValue(e.target.value);
+    setItemValue(e.target.value);
   };
 
   const handleSelect = (item: ISelectItem) => {
+    if (item.id === selectedItem?.id) return;
     if (onChange) {
       onChange(item);
     }
     setSelectedItem(item);
     setValue((item as ISelectItem).label);
+    setItemValue("");
     setIsOpen(false);
   };
 
@@ -93,30 +104,26 @@ export default function Select({
         setSelectedMultipleItems(defaultValue as ISelectItem[]);
       }
     }
-  }, []);
+  }, [defaultValue, multiple]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (window) {
       window.addEventListener("click", handleClickOutside);
     }
     return () => window.removeEventListener("click", handleClickOutside);
-  }, []);
+  }, [window]);
 
   return (
     <Wrapper id="select-wrapper" ref={dropdownRef}>
-      <Grid
+      <InputWrapper
         container
         alignItems="center"
         justifyContent="space-between"
         gap={10}
-        style={{
-          backgroundColor: disabled ? colors.black[20] : "white",
-          border: `1px solid ${
-            isOpen ? colors.primary[100] : colors.black[20]
-          }`,
-          ...inputContainer,
-        }}
+        disabled={disabled}
+        isOpen={isOpen}
       >
+        {/* Input area logic */}
         <Grid container gap={10} style={{ width: "100%" }}>
           {multiple &&
             selectedMultipleItems?.map((item) => (
@@ -138,6 +145,8 @@ export default function Select({
             />
           </Grid>
         </Grid>
+
+        {/* Icon's action */}
         <Grid container gap={10} style={{ flexWrap: "nowrap" }}>
           {multiple &&
             selectedMultipleItems &&
@@ -157,7 +166,9 @@ export default function Select({
             iconName="IcArrowDown"
           />
         </Grid>
-      </Grid>
+      </InputWrapper>
+
+      {/* Show list of  items when opened */}
       {isOpen && !disabled && (
         <ItemList
           onSelect={multiple ? handleSelectMultiple : handleSelect}
@@ -167,7 +178,7 @@ export default function Select({
               : (selectedItem as ISelectItem)
           }
           items={items}
-          value={value}
+          value={itemValue}
           multiple={multiple}
         />
       )}

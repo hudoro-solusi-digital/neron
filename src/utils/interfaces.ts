@@ -1,9 +1,11 @@
 import {
   ButtonHTMLAttributes,
+  Dispatch,
   HTMLAttributes,
   ImgHTMLAttributes,
   InputHTMLAttributes,
   ReactNode,
+  SetStateAction,
   SVGProps,
 } from "react";
 import {
@@ -123,4 +125,17 @@ export interface IIconProps extends HTMLAttributes<HTMLDivElement> {
   iconName: IconType;
   size?: 12 | 16 | 24 | 32;
   color?: string;
+}
+
+export interface ITabProps {
+  id: number | string;
+  title: string;
+  [x: string]: any;
+}
+
+export interface ITabsProps {
+  tabs: ITabProps[];
+  setTab: Dispatch<SetStateAction<ITabProps>>;
+  tab: ITabProps;
+  onClick?: (tab: ITabProps) => void;
 }

@@ -13,6 +13,7 @@ import Card from "./Card";
 import Pagination from "./Pagination";
 import Select from "./Select";
 import FileInput from "./FileInput";
+import Tabs from "./Tabs";
 
 export {
   Button,
@@ -30,4 +31,5 @@ export {
   Pagination,
   Select,
   FileInput,
+  Tabs,
 };
