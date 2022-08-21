@@ -1,6 +1,11 @@
-import { CSSProperties } from "react";
 import styled from "styled-components";
-import { fontFamilies } from "../../../utils";
+import { colors, fontFamilies } from "../../../utils";
+import Grid from "../Grid";
+
+interface IProps {
+  isOpen?: boolean;
+  disabled?: boolean;
+}
 
 export const Wrapper = styled.div`
   position: relative;
@@ -15,8 +20,12 @@ export const Input = styled.input`
   background-color: transparent;
 `;
 
-export const inputContainer: CSSProperties = {
-  borderRadius: 5,
-  padding: 10,
-  flexWrap: "nowrap",
-};
+export const InputWrapper = styled(Grid)<Pick<IProps, "disabled" | "isOpen">>`
+  background-color: ${({ disabled }) =>
+    disabled ? colors.black[20] : "white"};
+  border: 1px solid
+    ${({ isOpen }) => (isOpen ? colors.primary[100] : colors.black[20])};
+  border-radius: 5px;
+  padding: 10px;
+  flex-wrap: nowrap;
+`;
