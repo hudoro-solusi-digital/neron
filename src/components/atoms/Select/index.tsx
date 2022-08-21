@@ -8,7 +8,6 @@ import React, {
 import { colors, ISelectItem, ISelectProps } from "../../../utils";
 import Grid from "../Grid";
 import Icon from "../Icon";
-import Text from "../Text";
 import ItemList from "./ItemList";
 import SelectedItem from "./SelectedItem";
 import { Input, InputWrapper, Wrapper } from "./styles";
