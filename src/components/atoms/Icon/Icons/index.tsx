@@ -43,8 +43,20 @@ import IcMale from "./IcMale";
 import IcFemale from "./IcFemale";
 import IcEllipsis from "./IcEllipsis";
 import IcPlusCircle from "./IcPlusCircle";
+import IcCode from "./IcCode";
+import IcEdit from "./IcEdit";
+import IcGlobal from "./IcGlobal";
+import IcMail from "./IcMail";
+import IcMobile from "./IcMobile";
+import IcWhatsApp from "./IcWhatsApp";
 
 const Icons = {
+  IcWhatsApp: <IcWhatsApp />,
+  IcMobile: <IcMobile />,
+  IcMail: <IcMail />,
+  IcGlobal: <IcGlobal />,
+  IcEdit: <IcEdit />,
+  IcCode: <IcCode />,
   IcPlusCircle: <IcPlusCircle />,
   IcEllipsis: <IcEllipsis />,
   IcFemale: <IcFemale />,
